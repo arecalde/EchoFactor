@@ -1,4 +1,6 @@
 <?php
-  include '../../databases/echoConnect.php';
-
+  include '../databases/echoConnect.php';
+  if(!$connect){
+   echo "fail";
+  }
 ?>

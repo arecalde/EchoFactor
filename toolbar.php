@@ -74,7 +74,7 @@ else {
                   <center>
                   <h5 class="login_box">Login To Your Account</h5>
 <br />
-<form method="post" action="index.php">
+<form method="post">
 
 <input placeholder="Username" type="text" name= "username" /><br />
 <input placeholder="Password" type="password" name="password"><br />
@@ -135,7 +135,7 @@ header("Location:index.php?action=reload");		}
 
 }
 else {
-	echo "Please fill in ALL fields";
+	echo "Please fill in ALL fields $username $password";
 }	
 
 }
