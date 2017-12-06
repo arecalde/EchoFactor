@@ -1,0 +1,25 @@
+HELLO!
+
+This file is addressed to future me, potential employer, or some random enthusiast who found this off of the internet.
+
+A little bit about the website, it is a project that I had in high school to recreate Facebook. Not the facebook from now though, the original facebook.
+Back from when it was called The Facebook in 2004. That is why the layout looks the way that it does. My design skills are not genuinely that terrible.
+
+The code is written for fun and not for professional or academic reasons and in some areas this shows. The code relies entirely on a MySQL server and PHP, this is the enviroment that
+it needs to be ran in. The mailing features of the program are only compatible with the server that it was built on. There is a mysql template included in the file to create the
+database. the file includes/connect.php must be filled with credentials to your database. 
+
+A couple notes about the structure of the program:
+-The main folder has almost no actual code. Most of the 'meat' of the program is in the content folder
+-The file main.php is the heart of the program, it is essentially a template that pulls from the content folder and fills
+the template with whatever is needed
+-The few files in the main folder were either unique and could not be put in the template, or doing so would require a lot of additional effort or they are helper files
+-include 'includer.php'; is a file that includes the navigation bar, the database link, and the main function library
+-include 'head.php'; is a file that includes the title and the css that the program uses
+-footer is a file that shows legal stuff, and some links to the user
+-Anything not addressed here should be covered in file comments
+
+Current demo of site: http://echofactor.com/social
+
+No Longer Valid: http://alexrecalde.com/portfolio/echo is the most recent demo link
+Update: http://vps3.ghdom.tk/git/echo is the most recent demo

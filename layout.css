@@ -1,0 +1,134 @@
+input{
+background:#8b9dc3;
+
+color:#fff;
+
+padding:10px;
+border-radius:5px;
+border:0px;
+margin:5px 0px;
+}
+
+#stubborn {
+}
+
+textarea{
+background:#8b9dc3;
+width: 100%;
+
+color:#fff;
+
+padding:10px;
+border-radius:5px;
+border:0px;
+margin:5px 0px;
+}
+
+#test-input {
+    width: 100%;
+    display: block;
+}
+
+
+
+.login_box {
+	background:#8b9dc3;
+	
+color:#fff;
+
+padding:10px;
+border-radius:5px;
+border:0px;
+margin:5px 0px;
+text-decoration:none;
+
+}
+
+
+
+
+
+	
+	
+	body {
+		margin:0px 0px
+
+	
+	}
+.ti {
+	background:#3b5998;
+	
+	color:white;
+	background-size: 100%;
+	margin:0px 0px;
+	width:100%;
+	}
+#nav {
+	background: #3b5998;
+	
+	color: #fff;
+	
+	padding: 10px;
+	border-radius:5px;
+		margin:5px 5px 5px 5px;
+
+}
+
+.toolbar{
+    list-style:none;
+	padding:0px;
+	margin:0px;
+	}
+#nav ul{
+    list-style:none;
+	padding:0px;
+	margin:0px;
+}
+
+#nav ul li {
+float:right;
+padding:10px 0px;
+}
+
+#nav ul li a {
+color:#fff;
+padding:10px;
+text-decoration:none;
+border-radius:5px;
+}
+
+#nav ul li a:hover {
+background:#333;
+color:#fff;
+}
+
+.navfix {
+clear:both;
+}
+
+#footer ul {
+    list-style:none;
+	padding:0px;
+	margin:0px;
+    display: inline-block;
+
+}
+
+
+#footer ul li a {
+background: #3b5998;
+color:#white;
+padding:10px;
+text-decoration:none;
+border-radius:5px;
+}
+
+.box {
+background:#3b5998;
+color:#fff;
+padding:10px;
+border-radius:5px;
+border:0px;
+margin:5px 5px;
+text-decoration:none;
+}
