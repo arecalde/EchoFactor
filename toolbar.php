@@ -76,8 +76,8 @@ else {
 <br />
 <form method="post">
 
-<input placeholder="Username" type="text" name= "username" /><br />
-<input placeholder="Password" type="password" name="password"><br />
+<input placeholder="Username" autofill='no' type="text" name= "username" /><br />
+<input placeholder="Password" autofill='no' type="password" name="password"><br />
 <label>
 <input type="checkbox" name="rememberme">Remember Me
 </label>

@@ -11,7 +11,7 @@
 	if($action){
 		if($action == 'accept'){
 			mysqli_query($connect, "DELETE FROM frnd_req WHERE requester='$user' AND accepter='$my_id'");
-			mysqli_query($connect, "INSERT INTO frnds VALUES('', '$user', '$my_id')");
+			mysqli_query($connect, "INSERT INTO frnds VALUES(NULL, '$user', '$my_id')");
 
 			}
 		if($action == 'reject') {

@@ -65,7 +65,7 @@
 		$datetime = date('Y-m-d H:i:s');
 
 		if(isset($_POST['submit'])){
-		if($query = mysqli_query($connect, "INSERT INTO msgs (id, sender, reciever, message, datetime) VALUES ('', '".$my_id."', '".$user."', '".$message."', '".$datetime."') ")) 
+		if($query = mysqli_query($connect, "INSERT INTO msgs (id, sender, reciever, message, datetime) VALUES (NULL, '".$my_id."', '".$user."', '".$message."', '".$datetime."') ")) 
 		{
 				echo "Succesfully Sent";
 		}

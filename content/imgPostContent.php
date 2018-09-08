@@ -40,7 +40,7 @@
 						if(empty($errors)) { //if both paremeters were met
 							copy($file_tmp, 'images/'.$new_name); //actually move the file to the server
 							$image_up = 'images/'.$new_name; //record the path of the image
-							$sql = "INSERT INTO posts (id, user, content, datetime, type, caption) VALUES ('', '".$my_id."', '".$image_up."', '".$datetime."', '1',".
+							$sql = "INSERT INTO posts (id, user, content, datetime, type, caption) VALUES (NULL, '".$my_id."', '".$image_up."', '".$datetime."', '1',".
 								  "'".$caption."') "; //insert everything, 1 indicates that it is a picture
 							if($query = mysqli_query($connect, $sql)) {
 								echo "Posted";

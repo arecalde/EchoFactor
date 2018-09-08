@@ -51,25 +51,41 @@
 						$from = mysqli_num_rows($from_query);
 						$to = mysqli_num_rows($to_query);
 
-
+          
 		
 						if ($from == 1) //if they have already sent a request give me the option to ignore or accept
 						{ 
-							echo "<a href='' class='box'>Ignore</a> | <a href='actions.php?action=accept&user=$user' class='box'>Accept</a>";
+							echo "<span class='box'>Ignore</span> | <span onclick=\"handleAction($user, 'accept')\" class='box'>Accept</span>";
 						}
 						else if($to == 1) //if I have already sent a request give me the option to cancel
 						{ 
-							echo "<a href='actions.php?action=cancel&user=$user' class='box'>Cancel Request</a>";
+							echo "<span onclick=\"handleAction($user, 'cancel')\" class='box'>Cancel Request</span>";
 							}
 						else //otherwise give me the option to send a friendrequest
 						{
-						
-							echo "<a href='actions.php?action=send&user=$user' class='box'>Send Friend Request</a>";
+							echo "<span onclick=\"handleAction($user, 'send')\" class='box'>Send Friend Request</span>";
 						}
 	
 					}
 		
 				?>
+        <script type='text/javascript'>
+          function handleAction(user, action){
+            $.ajax({
+              type: 'post',
+              url: "actions.php",
+              data: {
+                  'action': action,
+                  'user': user,
+                  'user_id': <?php echo $_SESSION['user_id']; ?>
+              },
+              cache: false,
+              success: function(data) {
+                alert(data);
+              }
+          });
+          }
+        </script>
 				<br />
 				<br />
 

@@ -7,22 +7,23 @@
 <input type="text" name="lastname" placeholder="Last Name">
 
 <br />
-<input type="text" name="username" placeholder="Username">
+<input type="text" autofill='no' name='username' placeholder="Username">
 
 <br />
-<input type="password" name="password" placeholder="Password">
+<input type="password" autofill='no' name="password" placeholder="Password">
 <br />
 <input type="password" name="repassword" placeholder="Confirm Password">
 <br />
 <input type="text" name ="email" placeholder="Email" >
 <br />
-<input type="radio" name="gender" value="male" /> Male
+<input type="radio" checked='yes' name="gender" value="male" /> Male
 <input type="radio" name="gender" value="female" /> Female
 <br />
 <input type="submit" name="register" value="Register"> or <a href="login.php">Login</a>
 
 </form>
 <?php
+
 if(loggedIn()){
 	header('location: index.php');
 
@@ -38,13 +39,13 @@ $fname = mysqli_real_escape_string($connect, $_POST['firstname']);
 $lname = mysqli_real_escape_string($connect, $_POST['lastname']);
 
 if ($gender == "male") {
-    $propic = "photos/male_profile_pic.png";
+    $propic = "images/male_profile_pic.png";
 } else if ($gender == "female") {
-    $propic = "photos/female_profile_pic.png";
+    $propic = "images/female_profile_pic.png";
 }
 
 $hash       = sha1($password);
-$email_code = md5($username + microtime());
+$email_code = md5($username.microtime());
 
 if (isset($_POST['register'])) {
 
@@ -60,7 +61,7 @@ WHERE username = '$username'
 
 
 
-        $sql     = "INSERT INTO users (id, username, password, email, email_code, profile_pic, firstname, lastname, gender, date) VALUES ('', '" . $username . "', '" . $hash . "', '" . $email . "', '" . $email_code . "', '" . $propic . "', '" . $fname . "', '" . $lname . "', '" . $gender . "', '" . $date . "')";
+        $sql     = "INSERT INTO users (id, username, password, email, email_code, profile_pic, firstname, lastname, gender, date) VALUES (NULL, '" . $username . "', '" . $hash . "', '" . $email . "', '" . $email_code . "', '" . $propic . "', '" . $fname . "', '" . $lname . "', '" . $gender . "', '" . $date . "')";
 	//sql for inserting the user into database
 		$row     = mysqli_num_rows($ucheck);
         
@@ -89,13 +90,11 @@ http://echofactor.com/main.php?page=activate&email=" . $email . "&code=" . $emai
 h
 Welcome to EchoFactor! We are pretty new, but we are always adding more, check back regularly.
 ";
-                            mail($email, $subject, $formcontent, $mailheader) or die("Error!"); //send confirmation email to register account
+                            mail($email, $subject, $formcontent, $mailheader); //send confirmation email to register account
                         }
                         else {
-                            echo "Faliure";
-                        }
-                        
-                        
+                            echo "Faliure $sql";
+                        }                        
                     } else {
                         echo "Username taken";
                     }
